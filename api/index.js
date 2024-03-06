@@ -5,8 +5,12 @@ app.get("/", (req, res) => res.send("Youtube Automation Comment with HHTP webhoo
 
 app.get("/ytwebhook", (req, res) => 
 {
+    const challenge = req.query['hub.challenge']
     console.log(req.query);
     res.send("GET to HTTP webhook PubSubHubbub endpoint" + JSON.stringify(req.query));
+
+    if (challenge) return challenge;
+
 });
 
 
