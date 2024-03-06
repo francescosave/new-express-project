@@ -6,7 +6,7 @@ app.get("/", (req, res) => res.send("Youtube Automation Comment with HHTP webhoo
 app.get("/ytwebhook", (req, res) => 
 {
     console.log(req.query);
-    res.send("GET to HTTP webhook PubSubHubbub endpoint" + req.query );
+    res.send("GET to HTTP webhook PubSubHubbub endpoint" + JSON.stringify(req.query));
 });
 
 
