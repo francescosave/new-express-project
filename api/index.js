@@ -3,7 +3,13 @@ const app = express();
 
 app.get("/", (req, res) => res.send("Youtube Automation Comment with HHTP webhook PubSubHubbub push Notification"));
 
-app.get("/ytwebhook", (req, res) => res.send("GET to webhook PubSubHubbub endpoint" + req.hub.challenge));
+app.get("/ytwebhook", (req, res) => 
+{
+    console.log(req.query);
+    res.send("GET to HTTP webhook PubSubHubbub endpoint" + req.query );
+});
+
+
 app.post("/ytwebhook", (req, res) => res.send("message post"));
 
 
