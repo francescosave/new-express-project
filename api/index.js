@@ -8,7 +8,7 @@ app.get("/ytwebhook", (req, res) =>
     const challenge = req.query['hub.challenge']
     console.log(req.query);
     res.send("GET to HTTP webhook PubSubHubbub endpoint" + JSON.stringify(req.query));
-
+    res.send(challenge);
     if (challenge) return challenge;
 
 });
