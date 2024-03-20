@@ -18,7 +18,11 @@ app.get("/ytwebhook", (req, res) =>
 });
 
 
-app.post("/ytwebhook", (req, res) => res.send("message post"));
+app.post("/ytwebhook", (req, res) => 
+{
+    console.log(req)
+    res.send("message post")
+});
 
 
 app.listen(3000, () => console.log("Server ready on port 3000."));
